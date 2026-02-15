@@ -1,0 +1,81 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wmt-template}[2026/02/15 v1.2 Professional Package Template]
+
+% ====== 1. Layout & Digital Navigation ======
+\RequirePackage{geometry}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, headheight=15pt}
+
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{hyperref}
+\RequirePackage{bookmark}
+\RequirePackage{csquotes}
+\RequirePackage[english]{datetime2}
+
+% Global hyperlink style (black links, no colored boxes)
+% 中文提示：統一黑色連結，避免彩色外框影響列印與審稿閱讀。
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	urlcolor=black,
+	citecolor=black,
+	pdfborder={0 0 0}
+}
+
+% ====== 2. Automatic Header/Footer Configuration ======
+% 中文提示：頁首顯示學生姓名，頁尾顯示日期與總頁數。
+% Student name command with default value
+\newcommand{\studentname}[1]{\def\@studentname{#1}}
+\studentname{Unknown Student} % default
+
+% Custom date style: yyyy/mm/dd
+% 中文提示：日期格式統一為年/月/日，方便版本追蹤。
+\DTMnewdatestyle{yyyymmdd}{%
+	\renewcommand{\DTMdisplaydate}[4]{##1/##2/##3}%
+	\renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+\DTMsetdatestyle{yyyymmdd}
+
+\AtBeginDocument{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[L]{\footnotesize Student: \@studentname}
+	\fancyhead[R]{\footnotesize Draft Manuscript}
+	\renewcommand{\headrulewidth}{0.4pt}
+
+	\fancyfoot[L]{\small \today}
+	\fancyfoot[C]{\small \thepage\ / \pageref{LastPage}}
+	\renewcommand{\footrulewidth}{0.4pt}
+}
+
+
+% ====== 3. UI, Math, and Utility Packages ======
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[skins]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{amsmath, amssymb, mathtools}
+\RequirePackage{siunitx}
+\sisetup{group-separator = {,}, mode = match}
+
+% ====== 4. Bibliography (BibTeX Backend) ======
+\RequirePackage[backend=bibtex, style=ieee, sorting=none, sortcites=true, isbn=false, doi=true]{biblatex}
+
+% ====== 5. Algorithm & Table & Figure ======
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{stfloats}
+\RequirePackage{multicol}
+\RequirePackage{tabularray}
+\RequirePackage{graphicx}
+
+% ====== 6. Smart Referencing (load last) ======
+% 中文提示：cleveref 盡量放最後載入，避免參照名稱衝突。
+\RequirePackage[capitalize, nameinlink]{cleveref} % capitalize: initial caps; nameinlink: include label name in link
+% Custom reference names
+\crefname{table}{Table}{Tables}
+\crefname{figure}{Figure}{Figures}
+\crefname{equation}{Eq.}{Eqs.}
+\crefname{algorithm}{Algorithm}{Algorithms}
+
+\endinput

@@ -1,0 +1,21 @@
+% !TeX root = ../chapter_reference_main.tex
+% Background and preliminaries example
+
+\subsection*{Related Work (Categorized)}
+Prior studies can be grouped into index-based, compression-based, and parallel scheduling approaches. Index-based methods reduce lookup overhead but may suffer from high maintenance cost. Compression-based methods lower memory usage yet can introduce additional decode latency. Parallel scheduling methods improve throughput but may become unstable under skewed task distributions.
+
+For instance, Smith et al.~\cite{Wu2026TIFS} discuss privacy-preserving constraints that further complicate efficiency optimization in practical settings.
+
+From a systems perspective, these categories expose a recurring tradeoff: methods that aggressively optimize throughput often increase implementation and tuning complexity, while methods that emphasize stability may sacrifice peak performance under bursty traffic. This tradeoff motivates a unified formulation that makes resource constraints explicit.
+
+\subsection*{Problem Statement}
+\textbf{Given} a dataset $D$, resource budget $B$, and quality target $\tau$.\\
+\textbf{Find} a mining process $\Pi$ that generates result set $R$.\\
+\textbf{Such that} runtime and memory remain within budget while meeting the target quality.
+
+\subsection*{Notation}
+Let $|D|$ denote the number of records, $k$ the candidate size per iteration, and $M_{peak}$ the peak memory footprint during execution. The optimization goal is to minimize execution cost while preserving result consistency:
+\begin{equation}
+\min\ C(\Pi) = \alpha T(\Pi) + \beta M_{peak}(\Pi), \quad \text{s.t. } Q(\Pi) \geq \tau
+\label{eq:example_objective}
+\end{equation}

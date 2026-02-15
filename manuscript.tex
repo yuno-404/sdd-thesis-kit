@@ -1,0 +1,54 @@
+\documentclass[11pt, a4paper]{article}
+
+% ====== Preamble ======
+% 前導區：統一載入樣式與文獻設定
+\usepackage{wmt-template}
+\addbibresource{references.bib}
+\graphicspath{{./}{./figures/}}
+
+\algnewcommand{\To}{\textbf{to }}
+\algnewcommand{\Step}{\textbf{step }}
+
+\studentname{Your  Name}
+\title{Your Paper Title}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+% Keep abstract here, or move to a separate file with:\input{chapters/00-abstract}
+% 中文提示：摘要請維持 200--250 字，並回答 Why/What/How/So What。
+This paper addresses a core challenge in modern data-intensive systems and proposes a practical, high-performance solution. We identify key limitations of existing methods, including scalability bottlenecks and unstable efficiency under large workloads. To solve this problem, we design a method that combines structured data processing, optimized computation flow, and robust filtering mechanisms. The proposed framework is implemented and evaluated on representative datasets under controlled settings. Results show consistent improvements in runtime efficiency, memory usage, and overall robustness compared with strong baselines. These findings indicate that the method is suitable for large-scale deployment scenarios and provides measurable value for both research and real-world system operations.
+\end{abstract}
+
+\section{Introduction}
+% 中文提示：章節內容在 chapters/01-introduction.tex
+\input{chapters/01-introduction}
+
+\section{Background and Preliminaries}
+% 中文提示：Related Work + Preliminaries 需對齊規範
+\input{chapters/02-background-preliminaries}
+
+\section{Proposed Algorithm}
+% 中文提示：方法章需含 pseudocode 與複雜度分析
+\input{chapters/03-proposed-algorithm}
+
+\section{An Illustrated Example}
+% 中文提示：建議用 簡化範例 (simplified example) 展示逐步狀態變化
+\input{chapters/04-illustrated-example}
+
+\section{Experimental Results}
+% 中文提示：實驗需交代 setup/datasets/metrics/baselines
+\input{chapters/05-experimental-results}
+
+\section{Conclusion and Future Works}
+% 中文提示：請明確寫出限制與未來方向
+\input{chapters/06-conclusion-future-work}
+
+\printbibliography
+
+\end{document}

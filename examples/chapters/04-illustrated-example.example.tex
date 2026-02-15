@@ -1,0 +1,9 @@
+% !TeX root = ../chapter_reference_main.tex
+% Illustrated example
+
+Consider a toy dataset with five transactions and four items. In iteration 1, all candidates are initialized from singleton counts. In iteration 2, low-support candidates are pruned, and only feasible combinations remain. In iteration 3, the remaining candidates are merged into the final output. This step-by-step progression makes the method behavior easy to verify.
+
+For clarity, let the toy dataset be:
+\{\{A,B\}, \{A,C\}, \{A,B,C\}, \{B,C\}, \{A,D\}\}. With minimum support set to 2, singleton supports are $sup(A)=4$, $sup(B)=3$, $sup(C)=3$, $sup(D)=1$. Therefore, $D$ is removed after iteration 1.
+
+Iteration 2 evaluates pair candidates from the surviving set \{A,B,C\}: $sup(AB)=2$, $sup(AC)=2$, $sup(BC)=2$. All three pass the threshold. Iteration 3 evaluates the triple candidate $ABC$ with support 1, which is pruned. The final frequent itemsets are \{A,B,C,AB,AC,BC\}.

@@ -1,0 +1,12 @@
+% !TeX root = ../chapter_reference_main.tex
+% Experimental results example
+
+\subsection*{Setup and Metrics}
+Report CPU, RAM, OS, and implementation toolchain. Use runtime, peak memory, and scalability as primary metrics.
+
+For reproducibility, always include dataset sizes, sparsity characteristics, and baseline versions. If hardware differs across runs, explicitly report the difference and avoid direct speedup claims across non-equivalent setups.
+
+\subsection*{Baselines and Analysis}
+Compare against strong baselines under identical settings. Beyond reporting numerical differences, explain why trends occur (e.g., pruning efficiency, reduced synchronization overhead, or cache behavior).
+
+In this example chapter, numerical values are illustrative only. Use your real measurements in the final manuscript and keep interpretation causal: explain whether improvements come from reduced candidate volume, better memory locality, fewer synchronization points, or lower I/O overhead.

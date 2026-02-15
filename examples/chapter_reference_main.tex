@@ -1,0 +1,61 @@
+% Chapter-based reference example main file.
+% 中文說明：這份檔案是「章節式示例參考」，主要寫作請使用 manuscript.tex。
+% 中文說明：想看各章如何寫，請看 examples/chapters/*.tex。
+
+\documentclass[11pt, a4paper]{article}
+
+% ====== Preamble ======
+\makeatletter
+\def\input@path{{./}{../}{examples/}}
+\makeatother
+\usepackage{wmt-template}
+
+\IfFileExists{references.bib}{%
+  \addbibresource{references.bib}%
+}{%
+  \addbibresource{../references.bib}%
+}
+
+\graphicspath{{./}{./figures/}}
+
+\algnewcommand{\To}{\textbf{to }}
+\algnewcommand{\Step}{\textbf{step }}
+
+\studentname{Student Name}
+\title{Chapter-Based Reference Template for Thesis Drafting}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+This reference template demonstrates a chapter-oriented writing workflow for academic drafting. It organizes the manuscript into modular sections and maps each section to a dedicated chapter example file. The design helps authors write incrementally while preserving consistent formatting, citation style, and cross-reference conventions. To keep quality and compliance visible, each chapter example follows explicit structural constraints, including contribution clarity in the introduction, formal notation in preliminaries, reproducible setup in experiments, and limitation disclosure in the conclusion. Authors should use this file as a learning reference and write their actual content in \texttt{manuscript.tex} with \texttt{chapters/*.tex}.
+\end{abstract}
+
+% ====== Chapter-oriented reference ======
+% 中文說明：以下每章都對應到 examples/chapters 的示例檔。
+
+\section{Introduction}
+\input{chapters/01-introduction.example}
+
+\section{Background and Preliminaries}
+\input{chapters/02-background-preliminaries.example}
+
+\section{Proposed Algorithm}
+\input{chapters/03-proposed-algorithm.example}
+
+\section{An Illustrated Example}
+\input{chapters/04-illustrated-example.example}
+
+\section{Experimental Results}
+\input{chapters/05-experimental-results.example}
+
+\section{Conclusion and Future Works}
+\input{chapters/06-conclusion-future-work.example}
+
+\printbibliography
+
+\end{document}

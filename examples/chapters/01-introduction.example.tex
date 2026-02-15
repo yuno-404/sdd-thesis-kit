@@ -1,0 +1,17 @@
+% !TeX root = ../chapter_reference_main.tex
+% Introduction example: background -> gap -> approach -> contributions
+
+Data-intensive systems increasingly require mining pipelines that are both efficient and robust under variable workloads. Existing methods often optimize one objective at the cost of another, which limits deployment reliability. This motivates a framework that balances runtime efficiency, memory control, and analytical consistency.
+
+As shown in recent system-oriented studies \cite{Wu2024Systems} and \cite{Wu2025ICDM}, balancing throughput and quality remains a central challenge in real deployments.
+
+However, three practical gaps remain. First, many pipelines assume stable data distributions and degrade when workload skew changes rapidly. Second, memory control is often treated as an afterthought, leading to unstable peak usage in production traffic windows. Third, evaluation protocols are frequently difficult to reproduce because setup details and baseline configurations are under-specified.
+
+To address these gaps, this reference workflow uses a chapter-structured method description with explicit constraints on problem definition, algorithm presentation, and experimental reporting. The objective is not only to present a method, but also to make the drafting process auditable and easier to iterate under advisor or reviewer feedback.
+
+\subsection*{Example Contributions}
+\begin{itemize}[leftmargin=1.5em]
+  \item We propose an integrated framework for large-scale mining under dynamic workloads.
+  \item We design a resource-aware strategy that stabilizes latency while controlling memory growth.
+  \item We provide a reproducible evaluation protocol with causal analysis across baselines.
+\end{itemize}

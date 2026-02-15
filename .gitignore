@@ -1,0 +1,45 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# BibLaTeX-generated helper file
+*-blx.bib
+
+# Build artifacts
+*.pdf
+
+# OS junk
+.DS_Store
+Thumbs.db
+__MACOSX/
+
+# Archives
+*.zip
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/settings.windows.json
+!.vscode/settings.mac.json

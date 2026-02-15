@@ -1,0 +1,28 @@
+% !TeX root = ../chapter_reference_main.tex
+% Proposed algorithm example
+
+\subsection*{System Overview}
+The framework consists of preprocessing, adaptive candidate filtering, and execution scheduling modules. Data flows from raw input to normalized blocks, then to candidate generation, and finally to aggregated output.
+
+The preprocessing stage standardizes event structure and removes incomplete records. The adaptive filtering stage prioritizes candidates based on recent support trends and resource pressure. The scheduling stage allocates work units to workers while monitoring queue depth and memory watermark.
+
+\subsection*{Pseudocode Skeleton}
+\begin{algorithm}[ht]
+  \caption{Example Adaptive Mining Procedure}
+  \label{alg:example_adaptive}
+  \begin{algorithmic}[1]
+    \Require Dataset $D$, budget $B$
+    \Ensure Result set $R$
+    \State Initialize state $S$
+    \For{$i = 1$ \To $N$}
+      \State Update candidates based on current load
+      \State Execute selected tasks and aggregate outputs
+    \EndFor
+    \State \Return $R$
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection*{Complexity}
+Assume the candidate set size per iteration is $k$. A typical implementation yields time complexity $O(Nk)$ and space complexity $O(k)$ under fixed buffering.
+
+In practice, adaptive pruning reduces the effective candidate size to $k' \leq k$ for most iterations, so average runtime behaves closer to $O(Nk')$. This does not change the worst-case bound but improves stability under realistic workloads.
