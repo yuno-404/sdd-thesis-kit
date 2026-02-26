@@ -101,10 +101,3 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/export-single.ps1 -S
 - 規範主來源：`specs/rules/writing-constraints.md`
 - 任務與檢查：`specs/thesis-draft/tasks.md`
 
-至少確認：
-
-- Abstract 200-250 字且回答 Why/What/How/So What
-- Introduction 有 3+ 研究貢獻
-- 方法章有 pseudocode + time/space complexity
-- 實驗章有 setup/datasets/metrics/baselines + 原因分析
-- 結論章有 limitations + future work
